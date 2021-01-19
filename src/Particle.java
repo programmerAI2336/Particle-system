@@ -27,6 +27,6 @@ public class Particle {
 
     public void paint(Graphics g) {
         g.setColor(color);
-        g.fillRect((int) x, (int) y, width, length);
+        g.fillOval((int) x, (int) y, width, length);
     }
 }

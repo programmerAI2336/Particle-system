@@ -7,15 +7,24 @@ public class ParticlePhysicManager {
         this.particle = particle;
     }
 
+    private void setInteraction() {
+        for (Particle particle : particle) {
+            if (particle.y >= 600) {
+                particle.y = 600;
+                particle.ySpeed = 0;
+            }
+        }
+    }
+
     private void setGravity() {
-        float gravity = 0.01f;
+        float gravity = 0.05f;
         for (Particle particle : particle) {
             particle.ySpeed += gravity;
         }
     }
 
     private void setFriction() {
-        float friction = 0.01f;
+        float friction = 0.005f;
         for (Particle particle : particle) {
             if (Math.abs(particle.xSpeed) <= friction) {
                 particle.xSpeed = 0;
@@ -32,5 +41,6 @@ public class ParticlePhysicManager {
     public void setPhysic() {
         setGravity();
         setFriction();
+        setInteraction();
     }
 }

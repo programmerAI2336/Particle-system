@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Test extends JPanel implements ActionListener {
-    private final Spreader spreader = new Spreader(300, 300, 5, 2, (int) Math.toRadians(-90), (int) Math.toRadians(90));
+    private final Spreader spreader = new Spreader(300, 300, 50, 2, 0, 360);
 
     public Test() {
         Timer timer = new Timer(4, this);
