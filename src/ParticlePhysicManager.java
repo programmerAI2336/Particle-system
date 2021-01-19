@@ -10,8 +10,7 @@ public class ParticlePhysicManager {
     private void setInteraction() {
         for (Particle particle : particle) {
             if (particle.y >= 600) {
-                particle.y = 600;
-                particle.ySpeed = 0;
+                particle.appear = false;
             }
         }
     }

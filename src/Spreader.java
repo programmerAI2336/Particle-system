@@ -55,6 +55,10 @@ public class Spreader implements ActionListener {
         spreadTimer++;
     }
 
+    private void removeParticle() {
+        particle.removeIf(particle1 -> !particle1.appear);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         countTime();
@@ -63,6 +67,8 @@ public class Spreader implements ActionListener {
         for (Particle particle : particle) {
             particle.handleMovement();
         }
+        removeParticle();
+        System.out.println("Particle : " + particle.size());
     }
 
     public void paint(Graphics g) {
